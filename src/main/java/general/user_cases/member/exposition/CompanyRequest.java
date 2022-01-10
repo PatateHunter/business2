@@ -1,14 +1,14 @@
 package general.user_cases.member.exposition;
 
 public class CompanyRequest {
-    public String companyName;
-    public String companyId;
+    public String name;
+    public String id;
 
     @Override
     public String toString() {
         return "companyNameDTO{" +
-                "companyName='" + companyName + '\'' +
-                "companyId='" + companyId + '\'' +
+                "Name='" + name + '\'' +
+                "Id='" + id + '\'' +
                 '}';
     }
 }

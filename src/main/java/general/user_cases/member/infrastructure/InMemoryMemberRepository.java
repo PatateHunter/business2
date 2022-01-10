@@ -18,7 +18,7 @@ public class InMemoryMemberRepository implements MemberRepository {
 
     @Override
     public List<Member> findAll() {
-        return null;
+       return List.copyOf(data.values());
     }
 
     @Override

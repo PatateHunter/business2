@@ -9,10 +9,10 @@ public final class Amount {
 
     public Amount(double amount, String currency) {
         if(amount<0){
-            throw new NegativeAmount();
+            throw NegativeAmount.WithLog(amount);
         }
-        if(!currency.equals("")){
-            throw new NoCurrencyForAmount();
+        if(currency.equals("")){
+            throw NoCurrencyForAmount.WithLog(amount);
         }
 
         this.amount = amount;

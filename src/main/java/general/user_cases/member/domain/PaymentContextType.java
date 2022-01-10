@@ -1,12 +1,11 @@
 package general.user_cases.member.domain;
 
-public enum MemberShipType {
-
-   annual("annual");
+public enum PaymentContextType {
+    masterCard("MasterCard");
 
     private String value;
-    MemberShipType(String value) {
-      this.value = value;
+    PaymentContextType(String value) {
+        this.value = value;
     }
 
     public String getValue() {

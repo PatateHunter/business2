@@ -8,18 +8,19 @@ public final class Member implements Entity<MemberId> {
     private MemberId memberId;
     private MemberName name;
     private Company company;
-    private MemberShipType memberShipType;
+    private Subscription subscription;
 
 
-    private Member(MemberId memberId,MemberName name, Company company, MemberShipType memberShipType) {
+    public Member(MemberId memberId,MemberName name, Company company, Subscription subscription) {
+        this.memberId = memberId;
         this.name = name;
         this.company = company;
-        this.memberShipType = memberShipType;
+        this.subscription = subscription;
     }
 
-    public static Member of(MemberId memberId,MemberName name,Company company,MemberShipType type){
+   /* public static Member of(MemberId memberId,MemberName name,Company company,MemberShipType type){
         return new Member(memberId,name,company,type);
-    }
+    }*/
 
     public MemberId getMemberId() {
         return memberId;
@@ -33,13 +34,14 @@ public final class Member implements Entity<MemberId> {
         return company;
     }
 
-    public MemberShipType getMemberShipType() {
-        return memberShipType;
-    }
 
     @Override
     public MemberId id() {
         return memberId;
+    }
+
+    public Subscription getSubscription() {
+        return subscription;
     }
 
     @Override
@@ -47,11 +49,11 @@ public final class Member implements Entity<MemberId> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Member member = (Member) o;
-        return Objects.equals(name, member.name) && Objects.equals(company, member.company) && memberShipType == member.memberShipType && Objects.equals(memberId, member.memberId);
+        return Objects.equals(memberId, member.memberId) && Objects.equals(name, member.name) && Objects.equals(company, member.company) && Objects.equals(subscription, member.subscription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, company, memberShipType, memberId);
+        return Objects.hash(memberId, name, company, subscription);
     }
 }

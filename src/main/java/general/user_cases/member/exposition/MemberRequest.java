@@ -9,12 +9,14 @@ public class MemberRequest {
 
     @NotNull
     @NotBlank
-    public MemberNameRequest memberName;
+    public String memberName;
 
     @NotNull
-    @NotBlank
     public CompanyRequest company;
 
     @NotNull
-    public MemberShipType memberShipType;
+    public String memberShipType;
+
+    @NotNull
+    public String paymentType;
 }

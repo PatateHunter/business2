@@ -1,12 +1,12 @@
 package general.user_cases.member.exposition;
 
 public class MemberShipTypeRequest {
-    public String memberShipType;
+    public String name;
 
     @Override
     public String toString() {
         return "memberShipTypeDTO{" +
-                "memberShipType='" + memberShipType + '\'' +
+                "memberShipType='" + name + '\'' +
                 '}';
     }
 }
